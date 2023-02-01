@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Jumper : MonoBehaviour
 {
+    public Animator animator;
+
     public Transform feet;
     public Transform trampolin;
     public Transform trampolinCloth;
@@ -67,6 +69,8 @@ public class Jumper : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
+        animator.SetFloat("jumpAnimTime", legsExpanded);
+
         // move trampolin cloth bone position if feet are touching
         float feetY = feet.position.y;
         float trampolinY = trampolin.position.y;

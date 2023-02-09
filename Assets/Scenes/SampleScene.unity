@@ -146,7 +146,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   centerOfMass: {fileID: 2144141647}
-  legsSpeed: 2.5
+  jumpAnimationSpeed: 1
 --- !u!1 &295043171
 GameObject:
   m_ObjectHideFlags: 0

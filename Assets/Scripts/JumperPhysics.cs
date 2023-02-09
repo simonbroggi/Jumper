@@ -7,8 +7,9 @@ public class JumperPhysics : MonoBehaviour
     Animator characterAnimator;
     public Transform centerOfMass;
     Vector3 centerOfMassPosition;
-    float legsExpanded = 1;
-    public float legsSpeed = 0.1f;
+    float jumpAnimationTimeNormalized = 1f;
+    public float jumpAnimationSpeed = 1f;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -36,16 +37,16 @@ public class JumperPhysics : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.Space) || Input.GetMouseButton(0))
         {
-            legsExpanded = Mathf.MoveTowards(legsExpanded, 1f, legsSpeed * Time.deltaTime);
+            jumpAnimationTimeNormalized = Mathf.MoveTowards(jumpAnimationTimeNormalized, 1f, jumpAnimationSpeed * Time.deltaTime);
         }
         else
         {
-            legsExpanded = Mathf.MoveTowards(legsExpanded, 0f, legsSpeed * Time.deltaTime);
+            jumpAnimationTimeNormalized = Mathf.MoveTowards(jumpAnimationTimeNormalized, 0f, jumpAnimationSpeed * Time.deltaTime);
         }
         // control current animation
         AnimatorClipInfo[] animatorInfo = characterAnimator.GetCurrentAnimatorClipInfo(0);
         string currentAnimation = animatorInfo[0].clip.name;
         
-        characterAnimator.Play("Jump", 0, legsExpanded);
+        characterAnimator.Play("Jump", 0, jumpAnimationTimeNormalized);
     }
 }

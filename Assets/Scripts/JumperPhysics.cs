@@ -5,7 +5,6 @@ using UnityEngine;
 public class JumperPhysics : MonoBehaviour
 {
     Animator characterAnimator;
-    Renderer renderer;
     public Transform centerOfMass;
     Vector3 centerOfMassPosition;
     float legsExpanded = 1;
@@ -14,9 +13,7 @@ public class JumperPhysics : MonoBehaviour
     void Start()
     {
         characterAnimator = GetComponent<Animator>();
-        renderer = characterAnimator.GetComponentInChildren<Renderer>();
-        centerOfMassPosition = centerOfMass?centerOfMass.position:renderer.bounds.center;
-        
+        centerOfMassPosition = centerOfMass?centerOfMass.position:transform.position;
     }
 
     // Update is called once per frame

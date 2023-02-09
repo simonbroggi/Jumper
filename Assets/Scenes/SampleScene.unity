@@ -145,7 +145,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d54b0316d65080b4ea81a26ce39e3426, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  centerOfMass: {fileID: 0}
+  centerOfMass: {fileID: 2144141647}
   legsSpeed: 2.5
 --- !u!1 &295043171
 GameObject:
@@ -1078,4 +1078,9 @@ Transform:
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: e3de2ab7c4a604d4b96a0c5ef4c0355a, type: 3}
   m_PrefabInstance: {fileID: 1482655552}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &2144141647 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7232696660430642768, guid: 6c38a2449df65984bbba84cf5b3f26ae, type: 3}
+  m_PrefabInstance: {fileID: 1078101753}
   m_PrefabAsset: {fileID: 0}

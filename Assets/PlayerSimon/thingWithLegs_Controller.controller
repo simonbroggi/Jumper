@@ -28,7 +28,7 @@ AnimatorController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Robot
+  m_Name: thingWithLegs_Controller
   serializedVersion: 5
   m_AnimatorParameters:
   - m_Name: jumpAnimationTime
@@ -36,7 +36,7 @@ AnimatorController:
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   m_AnimatorLayers:
   - serializedVersion: 5
     m_Name: Base Layer
@@ -70,7 +70,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 1
-  m_Motion: {fileID: -623603649343465320, guid: 39bae38f2e478f242a1b6db799279e80, type: 3}
+  m_Motion: {fileID: 7238280004761517075, guid: 6c38a2449df65984bbba84cf5b3f26ae, type: 3}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 

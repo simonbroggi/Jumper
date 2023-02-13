@@ -123,26 +123,31 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &261650291 stripped
+--- !u!4 &51124694 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -5852745183378348533, guid: 6c38a2449df65984bbba84cf5b3f26ae, type: 3}
+  m_PrefabInstance: {fileID: 1126687088}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &62447801 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 6c38a2449df65984bbba84cf5b3f26ae, type: 3}
-  m_PrefabInstance: {fileID: 1078101753}
+  m_PrefabInstance: {fileID: 1126687088}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &261650292
+--- !u!114 &62447804
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 261650291}
+  m_GameObject: {fileID: 62447801}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d54b0316d65080b4ea81a26ce39e3426, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  centerOfMass: {fileID: 2144141647}
+  centerOfMass: {fileID: 51124694}
   mass: 20
-  jumpAnimationSpeed: 2.5
+  jumpAnimationSpeed: 2
   airDrag: 1
   trampolin: {fileID: 1736264284}
   trampolinCloth: {fileID: 1575894465}
@@ -255,7 +260,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 39bae38f2e478f242a1b6db799279e80, type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 39bae38f2e478f242a1b6db799279e80, type: 3}
       propertyPath: m_LocalPosition.x
@@ -303,7 +308,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 39bae38f2e478f242a1b6db799279e80, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5866666021909216657, guid: 39bae38f2e478f242a1b6db799279e80, type: 3}
       propertyPath: m_Controller
@@ -397,14 +402,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 705507993}
-  m_LocalRotation: {x: 0.0022128117, y: 0.9062954, z: -0.42261246, w: 0.0047453903}
+  m_LocalRotation: {x: 0.0022128907, y: 0.9062954, z: -0.42261246, w: 0.0047455598}
   m_LocalPosition: {x: 0, y: 3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 50, y: -0.6, z: 0}
+  m_LocalEulerAnglesHint: {x: 50, y: 179.4, z: 0}
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -489,7 +494,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: -45, z: 0}
---- !u!1001 &1078101753
+--- !u!1001 &1126687088
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -498,7 +503,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 6c38a2449df65984bbba84cf5b3f26ae, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 6c38a2449df65984bbba84cf5b3f26ae, type: 3}
       propertyPath: m_LocalPosition.x
@@ -506,7 +511,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 6c38a2449df65984bbba84cf5b3f26ae, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 6c38a2449df65984bbba84cf5b3f26ae, type: 3}
       propertyPath: m_LocalPosition.z
@@ -544,14 +549,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: thingWithLegs
       objectReference: {fileID: 0}
-    - target: {fileID: 919132149155446097, guid: 6c38a2449df65984bbba84cf5b3f26ae, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 5866666021909216657, guid: 6c38a2449df65984bbba84cf5b3f26ae, type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: 057bc5cd844e2734cb65b8ef595ebd00, type: 2}
+      objectReference: {fileID: 9100000, guid: c0cabaea41aa22543838380c84b4de71, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6c38a2449df65984bbba84cf5b3f26ae, type: 3}
 --- !u!1001 &1482655552
@@ -686,9 +687,4 @@ Transform:
 Transform:
   m_CorrespondingSourceObject: {fileID: -6829448084576631373, guid: 39bae38f2e478f242a1b6db799279e80, type: 3}
   m_PrefabInstance: {fileID: 638275995}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &2144141647 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 7232696660430642768, guid: 6c38a2449df65984bbba84cf5b3f26ae, type: 3}
-  m_PrefabInstance: {fileID: 1078101753}
   m_PrefabAsset: {fileID: 0}

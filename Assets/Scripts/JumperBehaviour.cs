@@ -16,17 +16,7 @@ public class JumperBehaviour : MonoBehaviour
     [Range(0f, 20f)]
     public float airDrag = 1f; // air resistance
 
-    [Header("Trampolin")]
-
-    public Transform trampolin;
-
-    public Transform trampolinCloth;
-
-    public float springRate = 2000f; // Federkonstante (kg/s2)
-
-    [Range(0f, 30f)]
-    public float trampolinDrag = 15f; // trampolin damping
-
+    public Trampolin trampolin;
 
     Vector3 centerOfMassPosition;
     Vector3 velocity = Vector3.zero;
@@ -34,7 +24,6 @@ public class JumperBehaviour : MonoBehaviour
     float jumpAnimationTime = 0f;
     Animator characterAnimator;
 
-    Vector3 trampolinClothRestPosition;
     Vector3 gravitationalPull = new Vector3(0f, -9.8f, 0f); // m/s2
 
     // Start is called before the first frame update
@@ -43,7 +32,15 @@ public class JumperBehaviour : MonoBehaviour
         characterAnimator = GetComponent<Animator>();
         centerOfMassPosition = centerOfMass?centerOfMass.position:transform.position;
 
-        trampolinClothRestPosition = trampolinCloth.position;
+        if(trampolin == null)
+        {
+            trampolin = FindObjectOfType<Trampolin>();
+        }
+
+        if(trampolin == null)
+        {
+            Debug.LogError("No trampolin found in the scene!");
+        }
     }
 
     // Update is called once per frame
@@ -53,12 +50,12 @@ public class JumperBehaviour : MonoBehaviour
 
         // Spring physics according to hooks law
         Vector3 springForce = Vector3.zero;
-        if(transform.position.y < trampolin.position.y)
+        if(transform.position.y < trampolin.transform.position.y)
         {
-            float springCompression = trampolin.position.y - transform.position.y;
-            springForce = springRate * springCompression * trampolin.up;
+            float springCompression = trampolin.transform.position.y - transform.position.y;
+            springForce = trampolin.springRate * springCompression * trampolin.transform.up;
 
-            dragForce += -(trampolinDrag * velocity.magnitude) * velocity.normalized;
+            dragForce += -(trampolin.trampolinDrag * velocity.magnitude) * velocity.normalized;
         }
 
         Vector3 acceleration = (springForce + dragForce) / mass;
@@ -80,10 +77,7 @@ public class JumperBehaviour : MonoBehaviour
 
         // move trampolin cloth bone for trampolin animation.
         // this all doesn't really work with multiple jumpers...
-        if(transform.position.y <= trampolin.position.y)
-        {
-            trampolinCloth.position = new Vector3(trampolinClothRestPosition.x, transform.position.y, trampolinClothRestPosition.z);
-        }
+        trampolin.UpdateAnimation(transform.position);
     }
 
     private void Update()

@@ -149,10 +149,7 @@ MonoBehaviour:
   mass: 20
   jumpAnimationSpeed: 2
   airDrag: 1
-  trampolin: {fileID: 1736264284}
-  trampolinCloth: {fileID: 1575894465}
-  springRate: 2000
-  trampolinDrag: 15
+  trampolin: {fileID: 0}
 --- !u!1 &295043171
 GameObject:
   m_ObjectHideFlags: 0
@@ -555,6 +552,11 @@ PrefabInstance:
       objectReference: {fileID: 9100000, guid: 3c33201d869e46548b35410883a585d7, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6c38a2449df65984bbba84cf5b3f26ae, type: 3}
+--- !u!1 &1231224450 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: e3de2ab7c4a604d4b96a0c5ef4c0355a, type: 3}
+  m_PrefabInstance: {fileID: 1482655552}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1482655552
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -674,15 +676,22 @@ MonoBehaviour:
   mass: 20
   jumpAnimationSpeed: 1
   airDrag: 1
-  trampolin: {fileID: 1736264284}
-  trampolinCloth: {fileID: 1575894465}
+  trampolin: {fileID: 0}
+--- !u!114 &1736264285
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1231224450}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00d887f08f3441c4abb804b905249f30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cloth: {fileID: 1575894465}
   springRate: 2000
   trampolinDrag: 15
---- !u!4 &1736264284 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: e3de2ab7c4a604d4b96a0c5ef4c0355a, type: 3}
-  m_PrefabInstance: {fileID: 1482655552}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &2074363995 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -6829448084576631373, guid: 39bae38f2e478f242a1b6db799279e80, type: 3}

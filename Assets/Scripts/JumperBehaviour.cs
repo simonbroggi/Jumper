@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class JumperBehaviour : MonoBehaviour
 {
-    [Header("Jumper")]
+    [Tooltip("The body of the character")]
     public Transform centerOfMass;
 
     [Range(0.1f, 100f)]
@@ -30,6 +30,21 @@ public class JumperBehaviour : MonoBehaviour
     void Start()
     {
         characterAnimator = GetComponent<Animator>();
+
+        // centerOfMass should be defined.
+        // In case it is not defined, try to find it according to position
+        if(centerOfMass == null)
+        {
+            foreach(Transform bone in transform.GetComponentsInChildren<Transform>())
+            {
+                if(centerOfMass == null || centerOfMass.position.y < bone.position.y)
+                {
+                    centerOfMass = bone;
+                }
+            }
+        }
+
+
         centerOfMassPosition = centerOfMass?centerOfMass.position:transform.position;
 
         if(trampolin == null)
@@ -76,7 +91,6 @@ public class JumperBehaviour : MonoBehaviour
         }
 
         // move trampolin cloth bone for trampolin animation.
-        // this all doesn't really work with multiple jumpers...
         trampolin.UpdateAnimation(transform.position);
     }
 

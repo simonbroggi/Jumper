@@ -97,6 +97,16 @@ public class JumperBehaviour : MonoBehaviour
             jumpAnimationTime = Mathf.MoveTowards(jumpAnimationTime, 0f, jumpAnimationSpeed * Time.deltaTime);
         }
 
+        if (Input.GetKey(KeyCode.LeftShift) || Input.GetMouseButton(1))
+        {
+            characterAnimator.SetBool("special", true);
+        }
+        else
+        {
+            characterAnimator.SetBool("special", false);
+        }
+
+
         characterAnimator.SetFloat("jumpAnimationTime", jumpAnimationTime);
     }
 }

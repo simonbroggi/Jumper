@@ -16,6 +16,9 @@ public class JumperBehaviour : MonoBehaviour
     [Range(0f, 20f)]
     public float airDrag = 1f; // air resistance
 
+    [Range(1f, 100f)]
+    public float rotationSpeed = 50f;
+
     public Trampolin trampolin;
 
     Vector3 centerOfMassPosition;
@@ -114,6 +117,15 @@ public class JumperBehaviour : MonoBehaviour
             characterAnimator.SetBool("special", false);
         }
 
+        if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
+        {
+            characterAnimator.transform.Rotate(Vector3.up * rotationSpeed * Time.deltaTime);
+        }
+
+        if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
+        {
+            characterAnimator.transform.Rotate(-Vector3.up * rotationSpeed * Time.deltaTime);
+        }
 
         characterAnimator.SetFloat("jumpAnimationTime", jumpAnimationTime);
     }
